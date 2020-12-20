@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 export const congrats = (props) => {
   if (props.success) {
     return (
@@ -11,4 +11,8 @@ export const congrats = (props) => {
     return <div data-test="test-congrats"></div>;
   }
 };
+congrats.propTypes = {
+  success: PropTypes.bool.isRequired,
+};
+
 export default congrats;
