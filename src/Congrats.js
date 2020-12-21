@@ -5,7 +5,7 @@ export const Congrats = (props) => {
   if (props.success) {
     return (
       <div data-test="test-congrats" className="alert alert-success">
-        <span data-test="test-success"> Congo!!! You gussed the words</span>
+        <span data-test="test-success"> Congo!!! You guessed the words</span>
       </div>
     );
   } else {

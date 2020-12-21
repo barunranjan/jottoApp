@@ -4,7 +4,7 @@ import GussedWord from "./GussedWord";
 import { checkProp, findByTestAttr } from "./test/testUtils";
 
 const defaultProps = {
-  gussedWords: [{ gussedWord: "train", letterMatchCount: 3 }],
+  guessedWords: [{ gussedWord: "train", letterMatchCount: 3 }],
 };
 
 const setUp = (props = {}) => {
@@ -18,7 +18,7 @@ test("does not throw warining", () => {
 describe("If no word is gussed", () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = setUp({ gussedWords: [] });
+    wrapper = setUp({ guessedWords: [] });
   });
   test("render without error", () => {
     const component = findByTestAttr(wrapper, "test-gussed");
@@ -34,13 +34,13 @@ describe("If no word is gussed", () => {
 });
 describe("If word is gussed", () => {
   let wrapper;
-  const gussedWords = [
+  const guessedWords = [
     { gussedWord: "train", letterMatchCount: 3 },
     { gussedWord: "agile", letterMatchCount: 1 },
     { gussedWord: "party", letterMatchCount: 4 },
   ];
   beforeEach(() => {
-    wrapper = setUp({ gussedWords });
+    wrapper = setUp({ guessedWords });
   });
   test("render without error", () => {
     const component = findByTestAttr(wrapper, "test-gussed");
@@ -52,6 +52,6 @@ describe("If word is gussed", () => {
   });
   test("render correct number of gussed word", () => {
     const gussedWordNode = findByTestAttr(wrapper, "test-gussed-section-table");
-    expect(gussedWordNode.length).toBe(gussedWords.length);
+    expect(gussedWordNode.length).toBe(guessedWords.length);
   });
 });

@@ -8,10 +8,10 @@ const App = () => {
       <h1>Jotto</h1>
       <Congrats success={false} />
       <GussedWord
-        gussedWords={[
-          { gussedWord: "train", letterMatchCount: 3 },
-          { gussedWord: "agile", letterMatchCount: 1 },
-          { gussedWord: "party", letterMatchCount: 4 },
+        guessedWords={[
+          { guessedWord: "train", letterMatchCount: 3 },
+          { guessedWord: "agile", letterMatchCount: 1 },
+          { guessedWord: "party", letterMatchCount: 4 },
         ]}
       />
     </div>
