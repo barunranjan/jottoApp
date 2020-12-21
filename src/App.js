@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="container">
       <h1>Jotto</h1>
-      <Congrats success={true} />
+      <Congrats success={false} />
       <GussedWord
         gussedWords={[
           { gussedWord: "train", letterMatchCount: 3 },

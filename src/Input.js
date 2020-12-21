@@ -4,18 +4,32 @@ import { connect } from "react-redux";
 
 const Input = (props) => {
   return (
-    <div>
-      <input
-        type="text"
-        className="form-control"
-        placeholder="try words..."
-        data-test="test-input"
-      />
+    <div data-test="test-inputComponent" className="row d-flex">
+      {props.success ? null : (
+        <div>
+          {" "}
+          <form className="form-inline">
+            <input
+              type="text"
+              className="mb-5 mx-sm-3 form-control"
+              placeholder="try words..."
+              data-test="test-input"
+            />
+            <button
+              className="btn btn-primary mb-2"
+              data-test="test-button"
+              type="submit"
+            >
+              Check
+            </button>
+          </form>
+        </div>
+      )}
     </div>
   );
 };
-const mapStateToProps = (state) => {
-  return {};
+const mapStateToProps = ({ success }) => {
+  return { success };
 };
 
 Input.propTypes = {};
