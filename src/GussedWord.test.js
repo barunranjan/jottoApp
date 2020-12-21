@@ -32,4 +32,26 @@ describe("If no word is gussed", () => {
     expect(instruction.length).not.toBe(0);
   });
 });
-describe("If word is gussed", () => {});
+describe("If word is gussed", () => {
+  let wrapper;
+  const gussedWords = [
+    { gussedWord: "train", letterMatchCount: 3 },
+    { gussedWord: "agile", letterMatchCount: 1 },
+    { gussedWord: "party", letterMatchCount: 4 },
+  ];
+  beforeEach(() => {
+    wrapper = setUp({ gussedWords });
+  });
+  test("render without error", () => {
+    const component = findByTestAttr(wrapper, "test-gussed");
+    expect(component.length).toBe(1);
+  });
+  test("render gussed word section", () => {
+    const gussedWordNode = findByTestAttr(wrapper, "test-gussed-section");
+    expect(gussedWordNode.length).toBe(1);
+  });
+  test("render correct number of gussed word", () => {
+    const gussedWordNode = findByTestAttr(wrapper, "test-gussed-section-table");
+    expect(gussedWordNode.length).toBe(gussedWords.length);
+  });
+});
