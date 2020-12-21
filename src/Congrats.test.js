@@ -1,6 +1,7 @@
 import { shallow } from "enzyme";
 import React from "react";
 import Congrats from "./Congrats";
+import Input from "./Input";
 import { checkProp, findByTestAttr } from "./test/testUtils";
 
 const defaultProps = { success: false };
@@ -24,8 +25,8 @@ test("render no text when success props is 'false'", () => {
 });
 test("render non-empty congrats when success props is 'true'", () => {
   const wrapper = setUp({ success: false });
-  const congText = findByTestAttr(wrapper, "test-congrats").text();
-  expect(congText.length).toBe(0);
+  const congText = findByTestAttr(wrapper, "test-congrats");
+  expect(congText.length).toBe(1);
 });
 test("doesnot throw warning with expected props", () => {
   const expectedProps = { success: false };

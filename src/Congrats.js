@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Input from "./Input";
 export const Congrats = (props) => {
   if (props.success) {
     return (
@@ -8,7 +9,11 @@ export const Congrats = (props) => {
       </div>
     );
   } else {
-    return <div data-test="test-congrats"></div>;
+    return (
+      <div data-test="test-congrats">
+        <Input />
+      </div>
+    );
   }
 };
 Congrats.propTypes = {
