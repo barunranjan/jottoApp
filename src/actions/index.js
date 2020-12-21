@@ -1,8 +1,8 @@
 export const actionTypes = {
   CORRECT_GUESS: "CORRECT_GUESS",
 };
-export function correctGuess() {
+export const correctGuess = () => {
   return {
     type: actionTypes.CORRECT_GUESS,
   };
-}
+};
