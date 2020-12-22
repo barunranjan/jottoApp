@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { guessWord } from "./actions";
 
 const Input = (props) => {
   return (
@@ -28,10 +29,11 @@ const Input = (props) => {
     </div>
   );
 };
+
 const mapStateToProps = ({ success }) => {
   return { success };
 };
 
 Input.propTypes = {};
 
-export default connect(mapStateToProps)(Input);
+export default connect(mapStateToProps, { guessWord })(Input);
